@@ -36,17 +36,16 @@ const Drawer = ({ open, onClose }) => {
                     >
                         {/* Draggable Sheet */}
                         <motion.div
-                            className="mx-auto max-w-md bg-white rounded-t-2xl border border-red-500 flex flex-col"
+                            className="mx-auto max-w-md bg-white rounded-t-2xl flex flex-col"
                             drag="y"
                             dragConstraints={{ top: 0 }}
                             dragElastic={0.2}
                             onDragEnd={(e, info) => {
                                 if (info.offset.y > 120) closeDrawer();
                             }}
-                            style={{ maxHeight: '90vh' }} // <-- limit drawer height to 90% of viewport
+                            style={{ maxHeight: '90vh' }} 
                         >
-                            {/* Drag Handle */}
-                            <div className="h-1.5 w-12 bg-gray-300 rounded-full mx-auto my-3" />
+                        
 
                             {/* Menu Content */}
                             <div className="relative flex-1 flex flex-col"> {/* removed overflow-hidden */}
@@ -60,7 +59,7 @@ const Drawer = ({ open, onClose }) => {
                                         className="w-full flex flex-col flex-1"
                                     >
                                         {/* Header */}
-                                        <div className="flex items-center gap-3 p-4 border-b flex-shrink-0">
+                                        <div className="flex items-center gap-3 p-4 shrink-0">
                                             {path.length > 0 && (
                                                 <button
                                                     onClick={() => {
